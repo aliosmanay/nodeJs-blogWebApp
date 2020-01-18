@@ -1,0 +1,64 @@
+<% include ../partials/header  %>
+
+
+ <!-- Page Header -->
+ <header class="masthead" style="background-image: url('https://images.unsplash.com/photo-1551735084-abd50939f264?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1213&q=80')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="page-heading">
+            <h1>Admin Panel</h1>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <div class="container"  >
+
+    <% adminActions.forEach( function(action){  %>
+
+    
+
+      
+        <div class="row">
+
+            <div class="col-lg-3 mx-auto">
+
+                <button type="button" id="<%=action.actionId %>" onclick="catchId(this.id)" class="btn btn-outline-primary btn-block"><%= action.actionDisplayName %></button>
+
+
+
+            </div>
+
+
+
+        </div>
+
+    <%}) %>
+
+  </div>
+
+
+  <script>
+  
+    
+
+    function catchId(catch_id){
+        alert(catch_id + "numarali butona bastiniz")
+        if(catch_id==1){
+          window.location.href='changeHomeImage'; return false;
+        }
+        if(catch_id==4 ){
+          window.location.href='addNewBlog'; return false;
+        }
+    }
+  
+  
+  </script>
+
+
+<% include ../partials/footer  %>
